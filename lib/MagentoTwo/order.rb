@@ -63,16 +63,12 @@ module MagentoTwo
     # @param [Integer, order_id] Magento Order ID
     # @return [String] Order ID
     def ship(order_id: nil, notify: true, carrier_code: nil, title: nil, track_number: nil)
-      object = {
-        notify: notify,
-        tracks: [
-          {
-            track_number: track_number,
-            title: title,
-            carrier_code: carrier_code
-          }
-        ]
-      }
+      object = tracking_params(
+        order_id: order_id,
+        notify: true,
+        carrier_code: carrier_code,
+        title: title,
+        track_number: track_number)
 
       begin
         response = @connection.post("order/#{order_id}/ship") do |req|
@@ -92,6 +88,19 @@ module MagentoTwo
         "searchCriteria[filter_groups][0][filters][#{index}][field]": field,
         "searchCriteria[filter_groups][0][filters][#{index}][value]": value,
         "searchCriteria[filter_groups][0][filters][#{index}][condition_type]": condition
+      }
+    end
+
+    def tracking_params(order_id: nil, notify: true, carrier_code: nil, title: nil, track_number: nil)
+      {
+        notify: notify,
+        tracks: [
+          {
+            track_number: track_number,
+            title: title,
+            carrier_code: carrier_code
+          }
+        ]
       }
     end
   end
