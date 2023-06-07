@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'faraday'
+require 'json'
 require_relative "MagentoTwo/version"
 require_relative "MagentoTwo/configuration"
 require_relative "MagentoTwo/client"
