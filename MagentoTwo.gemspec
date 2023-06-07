@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/Kaakati/magento-two"
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["changelog_uri"] = "https://github.com/Kaakati/magento-two#readme"
   spec.post_install_message = "#{spec.name} has been installed successfully!"
 
   # Specify which files should be added to the gem when it is released.
