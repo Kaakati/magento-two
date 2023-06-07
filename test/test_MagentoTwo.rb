@@ -23,8 +23,8 @@ class TestMagentoTwo < Minitest::Test
     end
     # puts MagentoTwo::Order.new.pending
     # puts MagentoTwo::Order.new.processing
-    # puts MagentoTwo::Order.new.complete
-    # puts MagentoTwo::Order.new.ship(order_id: 2, carrier_code: 'Manifest', title: 'Tracking Number', track_number: '1Y-9876543210')
-    puts MagentoTwo::Order.new.all
+    puts MagentoTwo::Order.new.complete
+    puts MagentoTwo::Order.new.ship(order_id: 2, carrier_code: 'Manifest', title: 'Tracking Number', track_number: '1Y-9876543210')
+    # puts MagentoTwo::Order.new.all
   end
 end
