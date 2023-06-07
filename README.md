@@ -23,7 +23,27 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+    MagentoTwo.configure do |config|
+      config.host = "http://host_url/rest/V1/"
+      config.token = "your_oauth_token"
+    end
+
+    # Get All Orders
+    MagentoTwo::Order.new.all
+
+    # Get Pending Orders
+    MagentoTwo::Order.new.pending
+
+    # Get Processing Orders
+    MagentoTwo::Order.new.processing
+
+    # Get Complete Orders
+    MagentoTwo::Order.new.complete
+
+    # Update Shipment
+    MagentoTwo::Order.new.ship(order_id: 1, carrier_code: 'DHL', title: 'Tracking Number', track_number: '9876543210')
+```
 
 ## Development
 
